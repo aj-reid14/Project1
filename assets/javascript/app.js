@@ -24,13 +24,15 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function(response)
             {
+                let newDIV = $("<div>");
                 console.log(response);
                 
                 let newGIF = $("<img>");
                 newGIF.addClass("gif");
                 newGIF.attr("src", response.data.image_original_url);
                 
-                $("#media-appear-here").html(newGIF);
+                newDIV.append(newGIF);
+                $("#media-appear-here").html(newDIV);
                 
             })
 
