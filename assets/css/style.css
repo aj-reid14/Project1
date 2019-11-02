@@ -20,4 +20,7 @@ h1 {
     display: none;
 }
 
-
+.gif
+{
+    border: 10px groove gray;
+}
