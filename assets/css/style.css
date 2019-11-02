@@ -8,6 +8,16 @@ h1 {
     background-color: whitesmoke;
 }
 
-  
+#joke-page {
+    display: none; 
+}
+ 
+#media-page {
+    display: none;
+}
+
+#event-page {
+    display: none;
+}
 
 
