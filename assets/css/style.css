@@ -21,3 +21,33 @@ h1 {
 }
 
 
+#jokeSetup {
+    border-radius: 25px;
+    text-align: center;
+    font-family: fantasy;
+    margin: auto;
+    width: auto;
+    border-style: dotted;
+    border-width: 5px;
+    border-color: lightgrey;
+    font-size: 24px;
+    padding: 50px;
+    background-color: gray;
+    color: white;
+}
+
+#jokeDelivery {
+    transition-delay: 20s;
+    border-radius: 25px;
+    text-align: center;
+    font-family: fantasy;
+    margin: auto;
+    width: auto;
+    border-style: dotted;
+    border-width: 5px;
+    border-color: lightgrey;
+    font-size: 24px;
+    padding: 50px;
+    background-color: gray;
+    color: white;
+}
