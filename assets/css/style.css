@@ -68,7 +68,7 @@ b {
     -webkit-animation: moveX 5s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
     -moz-animation: moveX 5s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
     -o-animation: moveX 5s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
-    animation: moveX 5s linear 0s infinite alternate, moveY4 s linear 0s infinite alternate;
+    animation: moveX 5s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
   }
   
   @-webkit-keyframes moveX {
