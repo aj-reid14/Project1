@@ -31,12 +31,15 @@ function SearchVideo() {
         "part": "snippet",
         "maxResults": 1,
         "q": "monkeys"
-    }).then(function(response) {
-        console.log(response);
-    })
+    }).then(function(response) {console.log(response);}, 
+            function(err) {console.log(err)})
 }
 
 function ConfigureButtons() {
+
+    $("#go-back1").click(function() {
+        SearchVideo();
+    })
 
     $("#level2").click(function () {
 
