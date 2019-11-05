@@ -24,6 +24,8 @@ $(document).ready(function () {
             $("#jokeDelivery").html(jokeDelivery);
             console.log(response[1].punchline);
         });
+
+        // hello
             // Delay punchline 
             // $("#jokeDelivery").delay("slow").fadeIn();
             
