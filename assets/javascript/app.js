@@ -61,6 +61,19 @@ $(document).ready(function () {
                     console.log(json);
                 },
                 });
+            
+            function showEvents(json) {
+                let items = $("#event-page");
+                items.hide();
+                let events = json._embedded.events;
+                let item = items.first();
+                for (var i=0;i<events.length;i++) {
+                    item.children("#event-appear-here").text(events[i].name);
+                    item.children("event-text").text(events[i].dates.start.localDate);
+                }
+
+
+            }
         });
     }
 });
