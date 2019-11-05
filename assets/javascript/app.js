@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function(){
     ConfigureButtons();
 
     function ConfigureButtons() {
@@ -62,6 +62,21 @@ $(document).ready(function () {
     });
 
     
-    
-    
+    //On click back-button
+    $("#go-back1").click (function () {
+        $("#start-page").show(); 
+        $("#joke-page").hide();
+    });
+
+    $("#go-back2").click (function () {
+        $("#start-page").show(); 
+        $("#media-page").hide();
+    });
+
+    $("#go-back3").click (function () {
+        $("#start-page").show(); 
+        $("#event-page").hide();
+    });
+
+
 });
