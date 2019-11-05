@@ -4,33 +4,6 @@ $(document).ready(function(){
     function ConfigureButtons() {
         
         // Level 1 Button Code
-<<<<<<< HEAD
-
-        $("#level1").click(function () {
-            $("#start-page").hide();
-            $("#joke-page").show();
-            
-            let giphyURL = "https://official-joke-api.appspot.com/random_ten";
-
-            $.ajax({
-                url: giphyURL,
-                method: "GET"
-            })
-                .then(function(response) {
-                console.log(response)
-
-                let jokeSetup = $("<div>" + response[1].setup + "</div>");
-                $("#jokeSetup").html(jokeSetup);
-
-                let jokeDelivery = $("<div>" + response[1].punchline + "</div>");
-                $("#jokeDelivery").html(jokeDelivery);
-            });
-
-            // Delay punchline 
-            $("#jokeDelivery").delay("slow").fadeIn();
-
-        });
-=======
     $("#level1").click(function () {
         $("#start-page").hide();
         $("#joke-page").show();
@@ -58,7 +31,6 @@ $(document).ready(function(){
             
     });
             
->>>>>>> 53ee958d6062281610fe1606e34645e9577624db
         // -----------------------
 
 
