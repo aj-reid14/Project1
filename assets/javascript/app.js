@@ -1,10 +1,10 @@
-$(document).ready(function () {
+$(document).ready(function(){
     ConfigureButtons();
 
     function ConfigureButtons() {
-    
-
+        
         // Level 1 Button Code
+<<<<<<< HEAD
 
         $("#level1").click(function () {
             $("#start-page").hide();
@@ -30,12 +30,64 @@ $(document).ready(function () {
             $("#jokeDelivery").delay("slow").fadeIn();
 
         });
+=======
+    $("#level1").click(function () {
+        $("#start-page").hide();
+        $("#joke-page").show();
+                        
+        let giphyURL = "https://official-joke-api.appspot.com/random_ten";
+            
+        $.ajax({
+            url: giphyURL,
+            method: "GET"
+        })
+            .then(function(response) {
+            console.log(response)
+            
+            let jokeSetup = $("<div>" + response[1].setup + "</div>");
+            $("#jokeSetup").html(jokeSetup);
+            
+            let jokeDelivery = $("<div>" + response[1].punchline + "</div>");
+            $("#jokeDelivery").html(jokeDelivery);
+            console.log(response[1].punchline);
+        });
+            // Delay punchline 
+            // $("#jokeDelivery").delay("slow").fadeIn();
+            
+    });
+            
+>>>>>>> 53ee958d6062281610fe1606e34645e9577624db
         // -----------------------
 
 
 
         // Level 2 Button Code
         $("#level2").click(function () {
+
+            $("#start-page").hide();
+            $("#media-page").show();
+            
+            let giphyAPI = "ZRqA9M0EnGRDwkZNjreUefK1gHCmbCcR";
+            let giphyURL = "https://api.giphy.com/v1/gifs/random?api_key=" + giphyAPI;
+            
+            $.ajax({
+                url: giphyURL,
+                method: "GET"
+            }).then(function(response)
+            {
+                let newDIV = $("<div>");
+                console.log(response);
+                
+                let newGIF = $("<img>");
+                newGIF.addClass("gif");
+                newGIF.attr("src", response.data.image_original_url);
+                
+                newDIV.append(newGIF);
+                $("#media-appear-here").html(newDIV);
+                
+            })
+
+
 
         })
         // -----------------------
@@ -49,16 +101,28 @@ $(document).ready(function () {
 
     //On click button start questions appear
 
-    $("#level2").click(function () {
-        $("#start-page").hide();
-        $("#media-page").show();
-
-    });
-
     $("#level3").click(function () {
         $("#start-page").hide();
         $("#event-page").show();
 
     });
+
+    
+    //On click back-button
+    $("#go-back1").click (function () {
+        $("#start-page").show(); 
+        $("#joke-page").hide();
+    });
+
+    $("#go-back2").click (function () {
+        $("#start-page").show(); 
+        $("#media-page").hide();
+    });
+
+    $("#go-back3").click (function () {
+        $("#start-page").show(); 
+        $("#event-page").hide();
+    });
+
 
 });
