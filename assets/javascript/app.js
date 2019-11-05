@@ -1,5 +1,3 @@
-let youtubeAPI = "AIzaSyBMblqCRc-6Ddlvc3mHpkgxcLUAy6HSezs";
-
 $(document).ready(function () {
     ConfigureButtons();
     gapi.load("client");
@@ -19,6 +17,7 @@ $(document).ready(function () {
 });
 
 function loadClient() {
+    let youtubeAPI = "AIzaSyBMblqCRc-6Ddlvc3mHpkgxcLUAy6HSezs";
     gapi.client.setApiKey(youtubeAPI);
     console.log(youtubeAPI);    
     return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest").then(function() 
@@ -27,10 +26,13 @@ function loadClient() {
 }
 
 function SearchVideo() {
+    let searchKeys = ["funny", "epic moments", "illusions", "try not to laugh", "bored"];
+    let randomSearch = searchKeys[Math.floor(Math.random() * 5)];
     return gapi.client.youtube.search.list({
         "part": "snippet",
         "maxResults": 1,
-        "q": "monkeys"
+        "order": "date",
+        "q": randomSearch
     }).then(function(response) {console.log(response);}, 
             function(err) {console.log(err)})
 }
@@ -49,8 +51,6 @@ function ConfigureButtons() {
         let giphyAPI = "ZRqA9M0EnGRDwkZNjreUefK1gHCmbCcR";
         let giphyURL = "https://api.giphy.com/v1/gifs/random?api_key=" + giphyAPI;
         
-        let youtubeURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=1&q=monkeys&key=" + youtubeAPI;
-
         loadClient();
         // $.ajax({
         //     url: giphyURL,
