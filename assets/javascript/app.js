@@ -6,7 +6,11 @@ $(document).ready(function () {
 
         // Level 1 Button Code
 
-        // -----------------------
+        $("#level1").click(function () {
+            $("#start-page").hide();
+            $("#joke-page").show();
+    
+        });
 
 
 
@@ -39,29 +43,24 @@ $(document).ready(function () {
 
 
         })
-        // -----------------------
-
-
-
         // Level 3 Button Code
+        $("#level3").click(function () {
 
-        // -----------------------
+            $("#start-page").hide();
+            $("#event-page").show();
+
+            let giphyAPI = "8WUUFHzUOAX0dQ43PlH9MnGXOQanNz4D";
+            let giphyURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + giphyAPI;
+
+            $.ajax({
+                type: "GET",
+                url: giphyURL,
+                async: true,
+                datatype: "json",
+                success: function(json) {
+                    console.log(json);
+                },
+                });
+        });
     }
-
-    //On click button start questions appear
-    $("#level1").click(function () {
-        $("#start-page").hide();
-        $("#joke-page").show();
-
-    });
-
-    $("#level3").click(function () {
-        $("#start-page").hide();
-        $("#event-page").show();
-
-    });
-
-    
-    
-    
 });
