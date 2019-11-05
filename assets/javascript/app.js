@@ -2,10 +2,33 @@ $(document).ready(function () {
     ConfigureButtons();
 
     function ConfigureButtons() {
-    
-
+        
         // Level 1 Button Code
-
+    $("#level1").click(function () {
+        $("#start-page").hide();
+        $("#joke-page").show();
+                        
+        let giphyURL = "https://official-joke-api.appspot.com/random_ten";
+            
+        $.ajax({
+            url: giphyURL,
+            method: "GET"
+        })
+            .then(function(response) {
+            console.log(response)
+            
+            let jokeSetup = $("<div>" + response[1].setup + "</div>");
+            $("#jokeSetup").html(jokeSetup);
+            
+            let jokeDelivery = $("<div>" + response[1].punchline + "</div>");
+            $("#jokeDelivery").html(jokeDelivery);
+            console.log(response[1].punchline);
+        });
+            // Delay punchline 
+            // $("#jokeDelivery").delay("slow").fadeIn();
+            
+    });
+            
         // -----------------------
 
 
