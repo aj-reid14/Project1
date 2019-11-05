@@ -65,10 +65,10 @@ b {
     background-color:black;
     box-shadow: inset -5px -5px 5px rgba(0,0,0,.6), 15px 15px 2px rgba(0,0,0,.04);
     position: absolute;
-    -webkit-animation: moveX 5s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
-    -moz-animation: moveX 5s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
-    -o-animation: moveX 5s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
-    animation: moveX 5s linear 0s infinite alternate, moveY 5s linear 0s infinite alternate;
+    -webkit-animation: moveX 5s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+    -moz-animation: moveX 5s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+    -o-animation: moveX 5s linear 0s infinite alternate, moveY 4s linear 0s infinite alternate;
+    animation: moveX 5s linear 0s infinite alternate, moveY4 s linear 0s infinite alternate;
   }
   
   @-webkit-keyframes moveX {
