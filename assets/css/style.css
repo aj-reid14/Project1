@@ -41,8 +41,28 @@ h1 {
     color: white;
 }
 
+<<<<<<< HEAD
+#jokeSetup {
+    border-radius: 25px;
+    text-align: center;
+    font-family: fantasy;
+    margin: auto;
+    width: auto;
+    border-style: dotted;
+    border-width: 5px;
+    border-color: lightgrey;
+    font-size: 24px;
+    padding: 50px;
+    background-color: gray;
+    color: white;
+}
+
+#jokeDelivery {
+    transition-delay: 20s;
+=======
 #jokeDelivery {
     transition-delay: 10s;
+>>>>>>> 53ee958d6062281610fe1606e34645e9577624db
     border-radius: 25px;
     text-align: center;
     font-family: fantasy;
