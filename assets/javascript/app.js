@@ -9,7 +9,25 @@ $(document).ready(function () {
         $("#level1").click(function () {
             $("#start-page").hide();
             $("#joke-page").show();
-    
+            
+            let giphyURL = "https://official-joke-api.appspot.com/random_ten";
+            
+        $.ajax({
+            url: giphyURL,
+            method: "GET"
+        })
+            .then(function(response) {
+            console.log(response)
+            
+            let jokeSetup = $("<div>" + response[1].setup + "</div>");
+            $("#jokeSetup").html(jokeSetup);
+            
+            let jokeDelivery = $("<div>" + response[1].punchline + "</div>");
+            $("#jokeDelivery").html(jokeDelivery);
+            console.log(response[1].punchline);
+        });
+            // Delay punchline 
+            // $("#jokeDelivery").delay("slow").fadeIn();
         });
 
 
@@ -41,7 +59,7 @@ $(document).ready(function () {
             })
 
 
-
+``
         })
         // Level 3 Button Code
         $("#level3").click(function () {
@@ -49,31 +67,39 @@ $(document).ready(function () {
             $("#start-page").hide();
             $("#event-page").show();
 
-            let giphyAPI = "8WUUFHzUOAX0dQ43PlH9MnGXOQanNz4D";
-            let giphyURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=" + giphyAPI;
-
             $.ajax({
-                type: "GET",
-                url: giphyURL,
-                async: true,
-                datatype: "json",
-                success: function(json) {
-                    console.log(json);
-                },
-                });
-            
-            function showEvents(json) {
-                let items = $("#event-page");
-                items.hide();
-                let events = json._embedded.events;
-                let item = items.first();
-                for (var i=0;i<events.length;i++) {
-                    item.children("#event-appear-here").text(events[i].name);
-                    item.children("event-text").text(events[i].dates.start.localDate);
-                }
+                url: "http://app.ticketmaster.com/discovery/v2/events.json?city&apikey=8WUUFHzUOAX0dQ43PlH9MnGXOQanNz4D",    
+                method: "GET"
+            }).then(function(response)
+            {
+                let newDIV = $("<div>");
+                console.log(response);
 
+                let newEvent = $("<p>");
+                newEvent.addClass("event");
+                newEvent.attr("src", response.data)
 
-            }
-        });
+                newDIV.append(newEvent);
+                $("#event-appear-here").html(newDIV);
+
+            })               
+        })
     }
+        //On click back-button
+        $("#go-back1").click (function () {
+        $("#start-page").show(); 
+        $("#joke-page").hide();
+        });
+
+        $("#go-back2").click (function () {
+        $("#start-page").show(); 
+        $("#media-page").hide();
+        });
+
+        $("#go-back3").click (function () {
+        $("#start-page").show(); 
+        $("#event-page").hide();
+        });
+
+
 });
