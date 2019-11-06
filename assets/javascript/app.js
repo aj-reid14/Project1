@@ -26,21 +26,34 @@ function loadClient() {
 }
 
 function SearchVideo() {
-    let searchKeys = ["funny", "epic moments", "illusions", "try not to laugh", "bored"];
+    let searchKeys = ["funny", "fail", "moments", "nature", "epic", "illusion", "bored", "cringe", "tricks", "magic", "chill"];
     let randomSearch = searchKeys[Math.floor(Math.random() * 5)];
     return gapi.client.youtube.search.list({
         "part": "snippet",
-        "maxResults": 1,
+        "maxResults": 50,
         "order": "date",
-        "q": randomSearch
-    }).then(function(response) {console.log(response);}, 
-            function(err) {console.log(err)})
+        "q": randomSearch,
+        "type": "video"
+    }).then(function (response) {
+        let randomResult = Math.floor(Math.random() * response.result.items.length);
+        let videoLink = "https://www.youtube.com/embed/" + response.result.items[randomResult].id.videoId;
+
+        let newVideo = $("<iframe frameborder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowfullscreen>");
+        newVideo.attr("width", screen.width * 0.3);
+        newVideo.attr("height", screen.height * 0.3);
+        newVideo.attr("src", videoLink);
+
+        $("#media-appear-here").html(newVideo);
+
+    },
+        function (err) { console.log(err) })
 }
 
 function ConfigureButtons() {
 
     $("#go-back1").click(function() {
-        SearchVideo();
+        $("#start-page").show();
+        $("#media-page").hide();
     })
 
     $("#level2").click(function () {
@@ -48,27 +61,31 @@ function ConfigureButtons() {
         $("#start-page").hide();
         $("#media-page").show();
         
-        let giphyAPI = "ZRqA9M0EnGRDwkZNjreUefK1gHCmbCcR";
-        let giphyURL = "https://api.giphy.com/v1/gifs/random?api_key=" + giphyAPI;
-        
         loadClient();
-        // $.ajax({
-        //     url: giphyURL,
-        //     method: "GET"
-        // }).then(function(response)
-        // {
-        //     let newDIV = $("<div>");
-        //     console.log(response);
-            
-        //     let newGIF = $("<img>");
-        //     newGIF.addClass("gif");
-        //     newGIF.attr("src", response.data.image_original_url);
-            
-        //     newDIV.append(newGIF);
-        //     $("#media-appear-here").html(newDIV);                
-        // })
+    })
 
+    $("#media-gif").click(function() {
+        SearchGIF();
+    })
 
+    $("#media-video").click(function() {
+        SearchVideo();
+    })
+}
 
+function SearchGIF() {
+    let giphyAPI = "ZRqA9M0EnGRDwkZNjreUefK1gHCmbCcR";
+    let giphyURL = "https://api.giphy.com/v1/gifs/random?api_key=" + giphyAPI;
+    
+    $.ajax({
+        url: giphyURL,
+        method: "GET"
+    }).then(function(response)
+    {        
+        let newGIF = $("<img>");
+        newGIF.addClass("gif");
+        newGIF.attr("src", response.data.image_original_url);
+        
+        $("#media-appear-here").html(newGIF);                
     })
 }
