@@ -58,8 +58,6 @@ $(document).ready(function () {
                 
             })
 
-
-``
         })
         // Level 3 Button Code
         $("#level3").click(function () {
@@ -68,22 +66,34 @@ $(document).ready(function () {
             $("#event-page").show();
 
             $.ajax({
-                url: "http://app.ticketmaster.com/discovery/v2/events.json?city&apikey=8WUUFHzUOAX0dQ43PlH9MnGXOQanNz4D",    
+                url: "http://app.ticketmaster.com/discovery/v2/events.json?apikey=8WUUFHzUOAX0dQ43PlH9MnGXOQanNz4D&locale=*&city=Miami",    
                 method: "GET"
             }).then(function(response)
             {
-                let newDIV = $("<div>");
-                console.log(response);
+                
+                let randomNumber = Math.floor(Math.random() * response._embedded.events.length);
 
-                let newEvent = $("<p>");
-                newEvent.addClass("event");
-                newEvent.attr("src", response.data)
+                let randomEvent = response._embedded.events[randomNumber].url;
+                console.log(randomEvent)
+                $("#link").attr("href", randomEvent);
 
-                newDIV.append(newEvent);
-                $("#event-appear-here").html(newDIV);
+                let eventName = response._embedded.events[randomNumber].name;
+                $("#link").text(eventName);
 
-            })               
-        })
+
+                console.log(response)
+
+
+                
+                  
+
+                
+                
+                
+                
+                
+            });
+        })              
     }
         //On click back-button
         $("#go-back1").click (function () {
