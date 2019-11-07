@@ -25,11 +25,24 @@ $(document).ready(function () {
             console.log(response[1].punchline);
         });
 
-        // hello
-            // Delay punchline 
-            // $("#jokeDelivery").delay("slow").fadeIn();
-            
-    });
+        let jokeGIFapi = "5aq9ySNcbmDa3eP7R5B0OdOaJBvYihlY"
+        let jokeGIFurl = "https://api.giphy.com/v1/gifs/random?api_key=" + jokeGIFapi;
+
+        $.ajax({
+            url: jokeGIFurl,
+            method: "GET"
+        }).then(function (response) {
+            let newDIV = $("<div>");
+            console.log(response);
+
+            let jokeGIF = $("<img>");
+            jokeGIF.addClass("gif");
+            jokeGIF.attr("src", response.data.image_original_url);
+
+            newDIV.append(jokeGIF);
+            $("#jokeGIF").html(newDIV);
+        });
+    }); 
             
         // -----------------------
 

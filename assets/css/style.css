@@ -56,3 +56,11 @@ h1 {
     background-color: gray;
     color: white;
 }
+
+#jokeGIF {
+    background-color: gray;
+    margin: auto;
+    border-style: dotted;
+    border-width: 5px;
+    border-color: lightgrey;
+}
