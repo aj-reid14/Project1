@@ -57,6 +57,14 @@ h1 {
     color: white;
 }
 
+#jokeGIF {
+    background-color: gray;
+    margin: auto;
+    border-style: dotted;
+    border-width: 5px;
+    border-color: lightgrey;
+}
+
 b {
     display: block;
     width: 80px;
@@ -95,3 +103,4 @@ b {
   @keyframes moveY {
     from { top: 5%; } to { top: 90%; }
   }
+

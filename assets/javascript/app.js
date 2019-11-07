@@ -7,6 +7,28 @@ $(document).ready(function () {
 
     function ConfigureButtons() {
 
+
+        let jokeGIFapi = "5aq9ySNcbmDa3eP7R5B0OdOaJBvYihlY"
+        let jokeGIFurl = "https://api.giphy.com/v1/gifs/random?api_key=" + jokeGIFapi;
+
+        $.ajax({
+            url: jokeGIFurl,
+            method: "GET"
+        }).then(function (response) {
+            let newDIV = $("<div>");
+            console.log(response);
+
+            let jokeGIF = $("<img>");
+            jokeGIF.addClass("gif");
+            jokeGIF.attr("src", response.data.image_original_url);
+
+            newDIV.append(jokeGIF);
+            $("#jokeGIF").html(newDIV);
+        });
+    }); 
+            
+        // -----------------------
+
         // "Bored Ball" on-click
         $("#bored-ball").click(function() {
             let newColor = "#";
@@ -20,6 +42,7 @@ $(document).ready(function () {
             // }
             $("#bored-ball").css("background-color", "rgba(" + color_r + ", " +  color_g + ", " + color_b + ", " +  0.4 + ")");
         })
+
 
 
         // Level 1 Button Code
