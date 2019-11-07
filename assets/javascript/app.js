@@ -60,7 +60,7 @@ $(document).ready(function () {
                 newGIF.attr("src", response.data.image_original_url);
                 
                 newDIV.append(newGIF);
-                $("#media-appear-here").html(newDIV);
+                $("#jokeGIF").html(newDIV);
                 
             })
 
@@ -76,36 +76,36 @@ $(document).ready(function () {
         loadClient();
     })
   
-          // Level 3 Button Code
-        $("#level3").click(function () {
+    // Level 3 Button Code
+    $("#level3").click(function () {
 
-            $("#start-page").hide();
-            $("#event-page").show();
+        $("#start-page").hide();
+        $("#event-page").show();
 
-            $.ajax({
-                url: "http://app.ticketmaster.com/discovery/v2/events.json?apikey=8WUUFHzUOAX0dQ43PlH9MnGXOQanNz4D&locale=*&city=Miami",    
-                method: "GET"
-            }).then(function(response)
-            {
+        $.ajax({
+            url: "http://app.ticketmaster.com/discovery/v2/events.json?apikey=8WUUFHzUOAX0dQ43PlH9MnGXOQanNz4D&locale=*&city=Miami",    
+            method: "GET"
+        }).then(function(response)
+        {
                 
-                let randomNumber = Math.floor(Math.random() * response._embedded.events.length);
+        let randomNumber = Math.floor(Math.random() * response._embedded.events.length);
 
-                let randomEvent = response._embedded.events[randomNumber].url;
-                console.log(randomEvent)
-                $("#link").attr("href", randomEvent);
+        let randomEvent = response._embedded.events[randomNumber].url;
+        console.log(randomEvent)
+        $("#link").attr("href", randomEvent);
 
-                let eventName = response._embedded.events[randomNumber].name;
-                $("#link").text(eventName);
-                console.log(response)
+        let eventName = response._embedded.events[randomNumber].name;
+        $("#link").text(eventName);
+        console.log(response)
     
-                let jokeGIF = $("<img>");
-                jokeGIF.addClass("gif");
-                jokeGIF.attr("src", response.data.image_original_url);
+        let jokeGIF = $("<img>");
+        jokeGIF.addClass("gif");
+        jokeGIF.attr("src", response.data.image_original_url);
     
-                newDIV.append(jokeGIF);
-                $("#jokeGIF").html(newDIV);
-            });
-        }); 
+        newDIV.append(jokeGIF);
+        $("#jokeGIF").html(newDIV);
+        });
+    }); 
 
     $("#media-gif").click(function() {
         SearchGIF();
@@ -129,7 +129,7 @@ $(document).ready(function () {
     $("#start-page").show(); 
     $("#event-page").hide();
     });
-
+    }
 });
 
 function loadClient() {
