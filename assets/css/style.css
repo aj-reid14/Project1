@@ -25,7 +25,89 @@ h1 {
     border: 10px groove gray;
 }
 
+
 #event-appear-here {
     background-color: antiquewhite;
 
 }
+
+#jokeSetup {
+    transition-delay: 10s;
+    border-radius: 25px;
+    text-align: center;
+    font-family: fantasy;
+    margin: auto;
+    width: auto;
+    border-style: dotted;
+    border-width: 5px;
+    border-color: lightgrey;
+    font-size: 24px;
+    padding: 50px;
+    background-color: gray;
+    color: white;
+    overflow: hidden;
+}
+
+#jokeDelivery {
+    transition-delay: 10s;
+    border-radius: 25px;
+    text-align: center;
+    font-family: fantasy;
+    margin: auto;
+    width: auto;
+    border-style: dotted;
+    border-width: 5px;
+    border-color: lightgrey;
+    font-size: 24px;
+    padding: 50px;
+    background-color: gray;
+    color: white;
+}
+
+#jokeGIF {
+    background-color: gray;
+    margin: auto;
+    border-style: dotted;
+    border-width: 5px;
+    border-color: lightgrey;
+    overflow: hidden;
+}
+
+b {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color:black;
+    box-shadow: inset -5px -5px 5px rgba(0,0,0,.6), 15px 15px 2px rgba(0,0,0,0.4);
+    position: absolute;
+    -webkit-animation: moveX 8s linear 0s infinite alternate, moveY 7s linear 0s infinite alternate;
+    -moz-animation: moveX 8s linear 0s infinite alternate, moveY 7s linear 0s infinite alternate;
+    -o-animation: moveX 8s linear 0s infinite alternate, moveY 7s linear 0s infinite alternate;
+    animation: moveX 8s linear 0s infinite alternate, moveY 7s linear 0s infinite alternate;
+  }
+  
+  @-webkit-keyframes moveX {
+    from { left: 5%; } to { left: 90%; }
+  }
+  @-moz-keyframes moveX {
+    from { left: 5%; } to { left: 90%; }
+  }
+  @-o-keyframes moveX {
+    from { left: 5%; } to { left: 90%; }
+  }
+  @keyframes moveX {
+    from { left: 5%; } to { left: 90%; }
+  }
+  @-webkit-keyframes moveY {
+    from { top: 5%; } to { top: 90%; }
+  }
+  @-moz-keyframes moveY {
+    from { top: 5%; } to { top: 90%; }
+  }
+  @-o-keyframes moveY {
+    from { top: 5%; } to { top: 90%; }
+  }
+  @keyframes moveY {
+    from { top: 5%; } to { top: 90%; }
+  }

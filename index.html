@@ -16,7 +16,7 @@
 <body>
 
 
-    <div class="container">
+    <div class="container"><b id="bored-ball"></b>
 
         <div id=start-page>
             <div class="row">
@@ -48,14 +48,22 @@
                     <h1 class="z-depth-5">JOKES</h1>
                 </div>
             </div>
-            <div id="joke-appear-here">
-                
-            </div>
-                <div class="row">
-                        <div class="col s12">
-                            <a id="go-back1" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>go back</a>   
-                        </div>
+
+            <div id="jokeSetup"></div>
+            <br>
+            <br>
+            <br>
+            <div id="jokeDelivery"></div>
+            <br>
+            <br>
+            <div id="jokeGIF"></div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col s12">
+                    <a id="go-back1" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>go back</a>   
                 </div>
+            </div>
         </div>
 
         <div id="media-page">
@@ -67,9 +75,13 @@
             <div id="media-appear-here">
 
             </div>
-            <div class="row">
+            <div class="row media-controls">
                     <div class="col s12">
+
+                        <a id='media-gif' class='waves-effect waves-light btn'>GIF</a>
+                        <a id='media-video' class='waves-effect waves-light btn'>Video</a>
                         <a id="go-back2"  class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>go back</a>   
+
                     </div>
             </div>
         
@@ -90,12 +102,11 @@
                 </div>
             </div>
         </div>
-
-
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
     <script src="assets/javascript/app.js"></script>
 
 </body>
