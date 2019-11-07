@@ -6,7 +6,6 @@ $(document).ready(function () {
     gapi.load("client");
 
     function ConfigureButtons() {            
-        // -----------------------
 
         // "Bored Ball" on-click
         $("#bored-ball").click(function() {
@@ -55,15 +54,17 @@ $(document).ready(function () {
             }).then(function (response) {
                 let newDIV = $("<div>");
                 console.log(response);
-    
-                let jokeGIF = $("<img>");
-                jokeGIF.addClass("gif");
-                jokeGIF.attr("src", response.data.image_original_url);
-    
-                newDIV.append(jokeGIF);
-                $("#jokeGIF").html(newDIV);
-            });
-        }); 
+                
+                let newGIF = $("<img>");
+                newGIF.addClass("gif");
+                newGIF.attr("src", response.data.image_original_url);
+                
+                newDIV.append(newGIF);
+                $("#media-appear-here").html(newDIV);
+                
+            })
+
+        })
 
         // -----------------------
 
@@ -74,6 +75,37 @@ $(document).ready(function () {
         
         loadClient();
     })
+  
+          // Level 3 Button Code
+        $("#level3").click(function () {
+
+            $("#start-page").hide();
+            $("#event-page").show();
+
+            $.ajax({
+                url: "http://app.ticketmaster.com/discovery/v2/events.json?apikey=8WUUFHzUOAX0dQ43PlH9MnGXOQanNz4D&locale=*&city=Miami",    
+                method: "GET"
+            }).then(function(response)
+            {
+                
+                let randomNumber = Math.floor(Math.random() * response._embedded.events.length);
+
+                let randomEvent = response._embedded.events[randomNumber].url;
+                console.log(randomEvent)
+                $("#link").attr("href", randomEvent);
+
+                let eventName = response._embedded.events[randomNumber].name;
+                $("#link").text(eventName);
+                console.log(response)
+    
+                let jokeGIF = $("<img>");
+                jokeGIF.addClass("gif");
+                jokeGIF.attr("src", response.data.image_original_url);
+    
+                newDIV.append(jokeGIF);
+                $("#jokeGIF").html(newDIV);
+            });
+        }); 
 
     $("#media-gif").click(function() {
         SearchGIF();
@@ -82,39 +114,22 @@ $(document).ready(function () {
     $("#media-video").click(function() {
         SearchVideo();
     })
-        // -----------------------
-
-        // Level 3 Button Code
-
-        // -----------------------
-    
-
-    //On click button start questions appear
-
-    $("#level3").click(function () {
-        $("#start-page").hide();
-        $("#event-page").show();
-
-    });
-  
-      //On click back-button
-    $("#go-back1").click(function () {
-        $("#start-page").show();
-        $("#joke-page").hide();
+    //On click back-button
+    $("#go-back1").click (function () {
+    $("#start-page").show(); 
+    $("#joke-page").hide();
     });
 
-    $("#go-back2").click(function () {
-        $("#start-page").show();
-        $("#media-page").hide();
+    $("#go-back2").click (function () {
+    $("#start-page").show(); 
+    $("#media-page").hide();
     });
 
-    $("#go-back3").click(function () {
-        $("#start-page").show();
-        $("#event-page").hide();
+    $("#go-back3").click (function () {
+    $("#start-page").show(); 
+    $("#event-page").hide();
     });
-      
-    }
-  
+
 });
 
 function loadClient() {
