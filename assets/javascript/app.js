@@ -1,19 +1,102 @@
+let colorVals = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
+    "A", "B", "C", "D", "E", "F"]
+
 $(document).ready(function () {
     ConfigureButtons();
     gapi.load("client");
 
-    //On click button start questions appear
-    $("#level1").click(function () {
-        $("#start-page").hide();
-        $("#joke-page").show();
+    function ConfigureButtons() {
 
-    });
+        // "Bored Ball" on-click
+        $("#bored-ball").click(function() {
+            let newColor = "#";
+
+            for (let i = 0; i < 6; i++) {
+                let randomColorVal = colorVals[Math.floor(Math.random() * colorVals.length)];
+                newColor += randomColorVal;
+            }
+            $("#bored-ball").css("background-color", newColor);
+        })
+
+
+        // Level 1 Button Code
+        $("#level1").click(function () {
+            $("#start-page").hide();
+            $("#joke-page").show();
+
+            let giphyURL = "https://official-joke-api.appspot.com/random_ten";
+
+            $.ajax({
+                url: giphyURL,
+                method: "GET"
+            })
+                .then(function (response) {
+                    console.log(response)
+
+                    let jokeSetup = $("<div>" + response[1].setup + "</div>");
+                    $("#jokeSetup").html(jokeSetup);
+
+                    let jokeDelivery = $("<div>" + response[1].punchline + "</div>");
+                    $("#jokeDelivery").html(jokeDelivery);
+                    console.log(response[1].punchline);
+                });
+
+            // hello
+            // Delay punchline 
+            // $("#jokeDelivery").delay("slow").fadeIn();
+
+        });
+
+        // -----------------------
+
+    $("#level2").click(function () {
+
+        $("#start-page").hide();
+        $("#media-page").show();
+        
+        loadClient();
+    })
+
+    $("#media-gif").click(function() {
+        SearchGIF();
+    })
+
+    $("#media-video").click(function() {
+        SearchVideo();
+    })
+        // -----------------------
+
+        // Level 3 Button Code
+
+        // -----------------------
+    
+
+    //On click button start questions appear
 
     $("#level3").click(function () {
         $("#start-page").hide();
         $("#event-page").show();
 
-    });    
+    });
+  
+      //On click back-button
+    $("#go-back1").click(function () {
+        $("#start-page").show();
+        $("#joke-page").hide();
+    });
+
+    $("#go-back2").click(function () {
+        $("#start-page").show();
+        $("#media-page").hide();
+    });
+
+    $("#go-back3").click(function () {
+        $("#start-page").show();
+        $("#event-page").hide();
+    });
+      
+    }
+  
 });
 
 function loadClient() {
@@ -47,30 +130,6 @@ function SearchVideo() {
 
     },
         function (err) { console.log(err) })
-}
-
-function ConfigureButtons() {
-
-    $("#go-back1").click(function() {
-        $("#start-page").show();
-        $("#media-page").hide();
-    })
-
-    $("#level2").click(function () {
-
-        $("#start-page").hide();
-        $("#media-page").show();
-        
-        loadClient();
-    })
-
-    $("#media-gif").click(function() {
-        SearchGIF();
-    })
-
-    $("#media-video").click(function() {
-        SearchVideo();
-    })
 }
 
 function SearchGIF() {
