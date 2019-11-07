@@ -5,28 +5,7 @@ $(document).ready(function () {
     ConfigureButtons();
     gapi.load("client");
 
-    function ConfigureButtons() {
-
-
-        let jokeGIFapi = "5aq9ySNcbmDa3eP7R5B0OdOaJBvYihlY"
-        let jokeGIFurl = "https://api.giphy.com/v1/gifs/random?api_key=" + jokeGIFapi;
-
-        $.ajax({
-            url: jokeGIFurl,
-            method: "GET"
-        }).then(function (response) {
-            let newDIV = $("<div>");
-            console.log(response);
-
-            let jokeGIF = $("<img>");
-            jokeGIF.addClass("gif");
-            jokeGIF.attr("src", response.data.image_original_url);
-
-            newDIV.append(jokeGIF);
-            $("#jokeGIF").html(newDIV);
-        });
-    }); 
-            
+    function ConfigureButtons() {            
         // -----------------------
 
         // "Bored Ball" on-click
@@ -46,32 +25,45 @@ $(document).ready(function () {
 
 
         // Level 1 Button Code
-        $("#level1").click(function () {
+        $("#level1").click(function () {
             $("#start-page").hide();
             $("#joke-page").show();
-
-            let giphyURL = "https://official-joke-api.appspot.com/random_ten";
-
+                            
+            let giphyURL = "https://official-joke-api.appspot.com/random_ten";
+                
             $.ajax({
-                url: giphyURL,
-                method: "GET"
+                url: giphyURL,
+                method: "GET"
             })
-                .then(function (response) {
-                    console.log(response)
-
-                    let jokeSetup = $("<div>" + response[1].setup + "</div>");
-                    $("#jokeSetup").html(jokeSetup);
-
-                    let jokeDelivery = $("<div>" + response[1].punchline + "</div>");
-                    $("#jokeDelivery").html(jokeDelivery);
-                    console.log(response[1].punchline);
-                });
-
-            // hello
-            // Delay punchline 
-            // $("#jokeDelivery").delay("slow").fadeIn();
-
-        });
+                .then(function(response) {
+                console.log(response)
+                
+                let jokeSetup = $("<div>" + response[1].setup + "</div>");
+                $("#jokeSetup").html(jokeSetup);
+                
+                let jokeDelivery = $("<div>" + response[1].punchline + "</div>");
+                $("#jokeDelivery").html(jokeDelivery);
+                console.log(response[1].punchline);
+            });
+    
+            let jokeGIFapi = "5aq9ySNcbmDa3eP7R5B0OdOaJBvYihlY"
+            let jokeGIFurl = "https://api.giphy.com/v1/gifs/random?api_key=" + jokeGIFapi;
+    
+            $.ajax({
+                url: jokeGIFurl,
+                method: "GET"
+            }).then(function (response) {
+                let newDIV = $("<div>");
+                console.log(response);
+    
+                let jokeGIF = $("<img>");
+                jokeGIF.addClass("gif");
+                jokeGIF.attr("src", response.data.image_original_url);
+    
+                newDIV.append(jokeGIF);
+                $("#jokeGIF").html(newDIV);
+            });
+        }); 
 
         // -----------------------
 
