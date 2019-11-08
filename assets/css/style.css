@@ -25,10 +25,15 @@ h1 {
     border: 10px groove gray;
 }
 
-
+/* Button 3 Style*/
 #event-appear-here {
-    background-color: antiquewhite;
+    background-color: white;
+    font-size: 20px;
+    
+}
 
+#go-back3 {
+    margin-top: 100px;
 }
 
 #jokeSetup {

@@ -96,14 +96,11 @@ $(document).ready(function () {
 
         let eventName = response._embedded.events[randomNumber].name;
         $("#link").text(eventName);
-        console.log(response)
+        console.log(response);
     
-        let jokeGIF = $("<img>");
-        jokeGIF.addClass("gif");
-        jokeGIF.attr("src", response.data.image_original_url);
-    
-        newDIV.append(jokeGIF);
-        $("#jokeGIF").html(newDIV);
+        let date = response._embedded.events[randomNumber].dates.start.localDate;
+        $("#eventDate").text(date);
+        console.log(date);
         });
     }); 
 
