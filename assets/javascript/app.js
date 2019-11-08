@@ -18,7 +18,7 @@ $(document).ready(function () {
             //     let randomColorVal = colorVals[Math.floor(Math.random() * colorVals.length)];
             //     newColor += randomColorVal;
             // }
-            $("#bored-ball").css("background-color", "rgba(" + color_r + ", " +  color_g + ", " + color_b + ", " +  0.4 + ")");
+            $("#bored-ball").css("background-color", "rgba(" + color_r + ", " +  color_g + ", " + color_b + ", " +  0.8 + ")");
         })
 
 
