@@ -1,11 +1,67 @@
 
 body {
  text-align: center;
- background: url("../images/positive.png");
+ background: url("../images/sky.png") no-repeat 50% fixed / cover;
 }
 
 h1 {
     background-color: whitesmoke;
+}
+
+#level1 {
+  top: 15%;
+  left: 0;
+  text-align: center;
+  width: 300px;
+  height: 200px;
+  line-height: 135px;
+  background-image: url("../images/cloud.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  position: absolute;
+  -webkit-animation: moveCloud 6s linear 0s infinite alternate;
+  -moz-animation: moveCloud 6s linear 0s infinite alternate;
+  -o-animation: moveCloud 6s linear 0s infinite alternate;
+  animation: moveCloud 6s linear 0s infinite alternate;
+}
+
+#level2 {
+  top: 45%;
+  left: 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 300px;
+  height: 200px;
+  line-height: 135px;
+  background-image: url("../images/cloud.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  position: absolute;
+  -webkit-animation: moveCloud 8s linear 0s infinite alternate;
+  -moz-animation: moveCloud 8s linear 0s infinite alternate;
+  -o-animation: moveCloud 8s linear 0s infinite alternate;
+  animation: moveCloud 8s linear 0s infinite alternate;
+}
+
+#level3 {
+  top: 75%;
+  left: 0;
+  text-align: center;
+  vertical-align: middle;
+  width: 300px;
+  height: 200px;
+  line-height: 150px;
+  background-image: url("../images/cloud.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  position: absolute;
+  -webkit-animation: moveCloud 10s linear 0s infinite alternate;
+  -moz-animation: moveCloud 10s linear 0s infinite alternate;
+  -o-animation: moveCloud 10s linear 0s infinite alternate;
+  animation: moveCloud 10s linear 0s infinite alternate;
 }
 
 #joke-page {
@@ -77,7 +133,9 @@ b {
     display: block;
     width: 80px;
     height: 80px;
+    border: 1px solid black;
     border-radius: 50%;
+    box-shadow: 0px 0px 10px 3px hsla(0, 0%, 0%, 0.2);
     background-color:black;
     position: absolute;
     -webkit-animation: moveX 8s linear 0s infinite alternate, moveY 7s linear 0s infinite alternate, shadowAnim 2s linear 1s infinite alternate;
@@ -112,21 +170,34 @@ b {
   }
 
   @keyframes shadowAnim {
-    from {box-shadow: 0px 0px 10px 3px hsla(0, 0%, 0%, 0);}
-    to {box-shadow: 0px 0px 5px 3px hsla(0, 0%, 0%, 1);}
+    from {box-shadow: 0px 0px 6px 4px hsla(0, 0%, 0%, 0.2);}
+    to {box-shadow: 0px 0px 10px 4px hsla(0, 0%, 0%, 1);}
   }
 
   @-o-keyframes shadowAnim {
-    from {box-shadow: 0px 0px 10px 3px hsla(0, 0%, 0%, 0);}
-    to {box-shadow: 0px 0px 5px 3px hsla(0, 0%, 0%, 1);}
+    from {box-shadow: 0px 0px 6px 4px hsla(0, 0%, 0%, 0.2);}
+    to {box-shadow: 0px 0px 10px 4px hsla(0, 0%, 0%, 1);}
   }
 
   @-moz-keyframes shadowAnim {
-    from {box-shadow: 0px 0px 10px 3px hsla(0, 0%, 0%, 0);}
-    to {box-shadow: 0px 0px 5px 3px hsla(0, 0%, 0%, 1);}
+    from {box-shadow: 0px 0px 6px 4px hsla(0, 0%, 0%, 0.2);}
+    to {box-shadow: 0px 0px 10px 4px hsla(0, 0%, 0%, 1);}
   }
 
   @-webkit-keyframes shadowAnim {
-    from {box-shadow: 0px 0px 10px 3px hsla(0, 0%, 0%, 0);}
-    to {box-shadow: 0px 0px 5px 3px hsla(0, 0%, 0%, 1);}
+    from {box-shadow: 0px 0px 6px 4px hsla(0, 0%, 0%, 0.2);}
+    to {box-shadow: 0px 0px 10px 4px hsla(0, 0%, 0%, 1);}
+  }
+
+  @-webkit-keyframes moveCloud {
+    from { left: 5%; } to { left: calc(100% - 300px); }
+  }
+  @-moz-keyframes moveCloud {
+    from { left: 5%; } to { left: calc(100% - 300px); }
+  }
+  @-o-keyframes moveCloud {
+    from { left: 5%; } to { left: calc(100% - 300px); }
+  }
+  @keyframes moveCloud {
+    from { left: 5%; } to { left: calc(100% - 300px); }
   }

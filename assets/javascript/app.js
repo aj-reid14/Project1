@@ -13,11 +13,7 @@ $(document).ready(function () {
             let color_r = Math.floor(Math.random() * 256);
             let color_g = Math.floor(Math.random() * 256);
             let color_b = Math.floor(Math.random() * 256);
-
-            // for (let i = 0; i < 6; i++) {
-            //     let randomColorVal = colorVals[Math.floor(Math.random() * colorVals.length)];
-            //     newColor += randomColorVal;
-            // }
+            
             $("#bored-ball").css("background-color", "rgba(" + color_r + ", " +  color_g + ", " + color_b + ", " +  0.8 + ")");
         })
 
