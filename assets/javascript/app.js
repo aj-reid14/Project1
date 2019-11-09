@@ -104,15 +104,15 @@ $(document).ready(function () {
         $("#eventDate").text(date);
         console.log(date);
 
-        let img = response._embedded.events[randomNumber].images[0].url;
+        let img = response._embedded.events[randomNumber].images[4].url;
         $("#eventIMG").attr("src", img);
         console.log(img);
         });
-
-        $("#eventBtn").click(function(){
-            $("#level3").click()
-        });
     }); 
+
+    $("#eventBtn").click(function(){
+        $("#level3").click()
+    });
     
        
 
