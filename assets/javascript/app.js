@@ -77,7 +77,7 @@ $(document).ready(function () {
     })
   
     // Level 3 Button Code
-    $("#level3").click(function () {
+    $("#level3").click(function() {
 
         $("#start-page").hide();
         $("#event-page").show();
@@ -108,8 +108,15 @@ $(document).ready(function () {
         $("#eventIMG").attr("src", img);
         console.log(img);
         });
-    
+
+        $("#eventBtn").click(function(){
+            $("#level3").click()
+        });
     }); 
+    
+       
+
+    
 
     $("#media-gif").click(function() {
         SearchGIF();
