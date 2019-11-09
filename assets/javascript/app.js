@@ -168,7 +168,7 @@ function ConfigureButtons() {
         $("#event-page").show();
 
         $.ajax({
-            url: "http://app.ticketmaster.com/discovery/v2/events.json?apikey=8WUUFHzUOAX0dQ43PlH9MnGXOQanNz4D&locale=*&city=Miami&size=200",
+            url: "https://app.ticketmaster.com/discovery/v2/events.json?apikey=8WUUFHzUOAX0dQ43PlH9MnGXOQanNz4D&locale=*&city=Miami&size=200",
             method: "GET"
         }).then(function (response) {
 
