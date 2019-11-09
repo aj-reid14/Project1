@@ -16,44 +16,51 @@ h1 {
   font-weight: bolder;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   text-align: center;
-  line-height: 90px;
+  line-height: 140px;
   
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   border: 3px solid black;
   border-radius: 50%;
+  box-shadow: 0px 0px 6px 4px hsla(0, 0%, 0%, 0.8);
   background-image: url("../images/trippy.gif");
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
 }
 
+#level1:hover, #level2:hover, #level3:hover {
+-webkit-transform: rotatez(360deg);
+-moz-transform: rotatez(360deg);
+-o-transform: rotatez(360deg);
+transform: rotatez(360deg);
+}
+
 #level1 {
   top: 15%;
   left: 0;
-  -webkit-animation: moveCloud 6s linear 0s infinite alternate;
-  -moz-animation: moveCloud 6s linear 0s infinite alternate;
-  -o-animation: moveCloud 6s linear 0s infinite alternate;
-  animation: moveCloud 6s linear 0s infinite alternate;
+  -webkit-animation: moveButtons 6s linear 0s infinite alternate;
+  -moz-animation: moveButtons 6s linear 0s infinite alternate;
+  -o-animation: moveButtons 6s linear 0s infinite alternate;
+  animation: moveButtons 6s linear 0s infinite alternate;
 }
 
 #level2 {
   top: 45%;
   left: 0;
-  width: 100px;
-  -webkit-animation: moveCloud 8s linear 0s infinite alternate;
-  -moz-animation: moveCloud 8s linear 0s infinite alternate;
-  -o-animation: moveCloud 8s linear 0s infinite alternate;
-  animation: moveCloud 8s linear 0s infinite alternate;
+  -webkit-animation: moveButtons 8s linear 0s infinite alternate;
+  -moz-animation: moveButtons 8s linear 0s infinite alternate;
+  -o-animation: moveButtons 8s linear 0s infinite alternate;
+  animation: moveButtons 8s linear 0s infinite alternate;
 }
 
 #level3 {
   top: 75%;
   left: 0;
-  -webkit-animation: moveCloud 11s linear 0s infinite alternate;
-  -moz-animation: moveCloud 11s linear 0s infinite alternate;
-  -o-animation: moveCloud 11s linear 0s infinite alternate;
-  animation: moveCloud 11s linear 0s infinite alternate;
+  -webkit-animation: moveButtons 11s linear 0s infinite alternate;
+  -moz-animation: moveButtons 11s linear 0s infinite alternate;
+  -o-animation: moveButtons 11s linear 0s infinite alternate;
+  animation: moveButtons 11s linear 0s infinite alternate;
 }
 
 #joke-page {
@@ -122,6 +129,9 @@ h1 {
 }
 
 b {
+    text-align: center;
+    line-height: 80px;
+    
     z-index: -1;
     display: block;
     width: 80px;
@@ -182,15 +192,39 @@ b {
     to {box-shadow: 0px 0px 15px 4px hsla(255, 100%, 100%, 1);}
   }
 
-  @-webkit-keyframes moveCloud {
-    from { left: 5%; } to { left: calc(100% - 300px); }
+  @-webkit-keyframes moveButtons {
+    from { left: 5%;} 
+    to { left: calc(100% - 300px);}
   }
-  @-moz-keyframes moveCloud {
-    from { left: 5%; } to { left: calc(100% - 300px); }
+  @-moz-keyframes moveButtons {
+    from { left: 5%;} 
+    to { left: calc(100% - 300px);}
   }
-  @-o-keyframes moveCloud {
-    from { left: 5%; } to { left: calc(100% - 300px); }
+  @-o-keyframes moveButtons {
+    from { left: 5%;} 
+    to { left: calc(100% - 300px);}
   }
-  @keyframes moveCloud {
-    from { left: 5%; } to { left: calc(100% - 300px); }
+  @keyframes moveButtons {
+    from { left: 5%;} 
+    to { left: calc(100% - 300px);}
+  }
+
+  @keyframes highlightButton {
+    from {box-shadow: 0px 0px 6px 4px hsla(0, 0%, 0%, 0.8);}
+    to {box-shadow: 0px 0px 10px 12px hsla(189, 76%, 47%, 0.8);}
+  }
+
+  @-o-keyframes highlightButton {
+    from {box-shadow: 0px 0px 6px 4px hsla(0, 0%, 0%, 0.8);}
+    to {box-shadow: 0px 0px 10px 12px hsla(189, 76%, 47%, 0.8);}
+  }
+
+  @-moz-keyframes highlightButton {
+    from {box-shadow: 0px 0px 6px 4px hsla(0, 0%, 0%, 0.8);}
+    to {box-shadow: 0px 0px 10px 12px hsla(189, 76%, 47%, 0.8);}
+  }
+
+  @-webkit-keyframes highlightButton {
+    from {box-shadow: 0px 0px 6px 4px hsla(0, 0%, 0%, 0.8);}
+    to {box-shadow: 0px 0px 10px 12px hsla(189, 76%, 47%, 0.8);}
   }
