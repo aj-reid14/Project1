@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>The Bored Board</title>
-    <link href="https://fonts.googleapis.com/css?family=Hi+Melody&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap" rel="stylesheet">    <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -15,13 +14,14 @@
 
 <body>
 
+    <h4 id="global-message">Hello</h4>
 
-    <div class="container"><b id="bored-ball"><span id="bored-text"></span></b>
+    <div class="container"><b id="bored-ball"><span id="bored-text">Click Me!</span></b>
 
         <div id=start-page>
             <div class="row">
                 <div class="col s12">
-                    <h1 class="z-depth-1">THE BORED BOARD</h1>
+                    <h1>THE BORED BOARD</h1>
                 </div>
             </div>
 
@@ -58,7 +58,9 @@
             <br>
             <div class="row">
                 <div class="col s12">
-                    <a id="go-back1" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>go back</a>   
+                    <a id='like' class='waves-effect waves-light btn go-back1'>Good One</a>
+                    <a id='dislike' class='waves-effect waves-light btn go-back1'>I'm Lost</a>
+                    <a id="go-back1" class='aves-effect waves-light btn go-back1'><i class="material-icons left">cloud</i>go back</a>   
                 </div>
             </div>
         </div>
@@ -97,9 +99,9 @@
                 <img src="#" id="eventIMG"></img>
             </div>
             <div class="row">
-                <a id="eventBtn" class='waves-effect waves-light btn'>Get another event</a>
                 <div class="col s12">
-                    <a id="go-back3" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>go back</a>   
+                    <a id="eventBtn" class='waves-effect waves-light btn'>Get another event</a>
+                    <a id="go-back3" class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>go back</a>
                 </div>
             </div>
         </div>
