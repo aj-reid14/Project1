@@ -75,7 +75,7 @@ transform: rotatez(360deg);
     display: none;
 }
 
-.gif
+.media
 {
     border: 10px groove gray;
 }
@@ -135,6 +135,10 @@ transform: rotatez(360deg);
     overflow: hidden;
 }
 
+b:hover {
+  border-color: white;
+}
+
 b {
     text-align: center;
     line-height: 80px;
@@ -143,7 +147,7 @@ b {
     display: block;
     width: 80px;
     height: 80px;
-    border: 1px solid black;
+    border: 3px solid black;
     border-radius: 50%;
     box-shadow: 0px 0px 10px 3px hsla(0, 0%, 0%, 0.2);
     background-color:black;
