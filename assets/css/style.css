@@ -122,7 +122,8 @@ transform: rotatez(360deg);
 }
 
 #eventIMG {
-  width: 500px;
+  width: 75%;
+  height: 75%;
 }
 
 #jokeSetup {
