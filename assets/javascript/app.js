@@ -83,11 +83,13 @@ $(document).ready(function () {
         $("#event-page").show();
 
         $.ajax({
-            url: "http://app.ticketmaster.com/discovery/v2/events.json?apikey=8WUUFHzUOAX0dQ43PlH9MnGXOQanNz4D&locale=*&city=Miami",    
+            url: "http://app.ticketmaster.com/discovery/v2/events.json?apikey=8WUUFHzUOAX0dQ43PlH9MnGXOQanNz4D&locale=*&city=Miami&size=200",    
             method: "GET"
         }).then(function(response)
         {
-                
+        
+        console.log(response);
+
         let randomNumber = Math.floor(Math.random() * response._embedded.events.length);
 
         let randomEvent = response._embedded.events[randomNumber].url;
@@ -96,12 +98,17 @@ $(document).ready(function () {
 
         let eventName = response._embedded.events[randomNumber].name;
         $("#link").text(eventName);
-        console.log(response);
+        console.log(eventName);
     
         let date = response._embedded.events[randomNumber].dates.start.localDate;
         $("#eventDate").text(date);
         console.log(date);
+
+        let img = response._embedded.events[randomNumber].images[0].url;
+        $("#eventIMG").attr("src", img);
+        console.log(img);
         });
+    
     }); 
 
     $("#media-gif").click(function() {

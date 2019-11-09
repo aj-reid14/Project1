@@ -29,9 +29,11 @@ h1 {
 #event-appear-here {
     background-color: white;
     font-size: 20px;
-    
 }
 
+#eventIMG {
+  width: 1000px;
+}
 #go-back3 {
     margin-top: 100px;
 }
